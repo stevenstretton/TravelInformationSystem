@@ -1,8 +1,22 @@
 package com.company;
 
-public class Main {
+import com.company.PlatformScreens.ScreenManager;
+import com.company.Platforms.DestinationProcesses;
+
+public class Main extends DestinationProcesses{
+
+
+    //Cant access objects outside of static methods.
 
     public static void main(String[] args) {
-	// write your code here
+
+        DestinationProcesses destinationProcesses = new DestinationProcesses();
+        ScreenManager screenManager = new ScreenManager();
+
+        destinationProcesses.collectDestinationForPlatform();
+        screenManager.destinationProcess();
+        screenManager.goToStationScreen();
+
+
     }
 }
