@@ -14,7 +14,8 @@ public class Main extends DestinationProcesses{
         ScreenManager screenManager = new ScreenManager();
 
         destinationProcesses.collectDestinationForPlatform();
-        screenManager.DestinationProcess();
+        screenManager.destinationProcess();
+        screenManager.goToStationScreen();
 
 
     }

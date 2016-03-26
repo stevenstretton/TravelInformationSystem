@@ -16,7 +16,7 @@ public class ScreenManager extends DestinationProcesses{
     private Set destinationSet = destinations.entrySet(); //Set is a collection that cannot contain duplicate elements
     private Iterator destinationIterator = destinationSet.iterator(); //Iterator can check for any beginning and proceding elements
 
-    public void DestinationProcess()
+    public void destinationProcess()
     {
         while(destinationIterator.hasNext())
         {
@@ -40,6 +40,13 @@ public class ScreenManager extends DestinationProcesses{
         }
 
         return callingPointsToDisplay;
+    }
+
+    public void goToStationScreen()
+    {
+        StationScreen stationScreen = new StationScreen();
+        stationScreen.primaryDestination();
+        stationScreen.callingRoutes();
     }
 
 }

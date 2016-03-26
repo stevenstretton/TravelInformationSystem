@@ -9,13 +9,13 @@ public class StationScreen extends ScreenManager{
 
     ScreenManager screenManager = new ScreenManager();
 
-    public void PrimaryDestination()
+    public void primaryDestination()
     {
         screenManager.CollectPrimaryDestination();
         System.out.println("...");
     }
 
-    public void CallingRoutes()
+    public void callingRoutes()
     {
         screenManager.CollectCallingPoints();
         System.out.println("...");
