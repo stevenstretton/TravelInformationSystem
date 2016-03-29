@@ -2,33 +2,49 @@ package com.company.PlatformScreens;
 
 import com.company.Platforms.DestinationProcesses;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
 /**
  * Created by stevenstretton on 23/03/2016.
  */
-public class ScreenManager extends DestinationProcesses{
+public class ScreenManager{
 
-    public ArrayList destinationToDisplay = new ArrayList();
+    private static ArrayList<String> destinationToDisplay = new ArrayList<String>();
 
-    private Set destinationSet = destinations.entrySet(); //Set is a collection that cannot contain duplicate elements
-    private Iterator destinationIterator = destinationSet.iterator(); //Iterator can check for any beginning and proceding elements
-
-    public void destinationProcess()
+    public void destinationProcess(HashMap<String, String> destinations) //Not receiving destinations
     {
+        Set destinationSet = destinations.entrySet(); //Set is a collection that cannot contain duplicate elements
+        Iterator destinationIterator = destinationSet.iterator(); //Iterator can check for any beginning and preceding elements
+
         while(destinationIterator.hasNext())
         {
-            destinationToDisplay.add(destinationIterator.next());
+            destinationToDisplay.add(destinationIterator.next().toString());
         }
+
+        returnToDisplay(destinationToDisplay);
+    }
+
+    public ArrayList returnToDisplay(ArrayList destinationToDisplay)
+    {
+        return destinationToDisplay;
     }
 
     public String CollectPrimaryDestination()
     {
-        String getDestination = (String)destinationToDisplay.get(0);
+        String destinationsToScreen[] = new String[destinationToDisplay.size()];
 
-        return getDestination;
+        for(int i = 0; i < destinationToDisplay.size(); i++)
+        {
+            destinationsToScreen[i] = destinationToDisplay.get(i);
+            destinationsToScreen[i].split("[=]");
+
+        }
+
+        return destinationsToScreen[0];
     }
 
     public ArrayList CollectCallingPoints()
@@ -45,6 +61,10 @@ public class ScreenManager extends DestinationProcesses{
     public void goToStationScreen()
     {
         StationScreen stationScreen = new StationScreen();
+
+        CollectPrimaryDestination();
+        CollectCallingPoints();
+
         stationScreen.primaryDestination();
         stationScreen.callingRoutes();
     }
