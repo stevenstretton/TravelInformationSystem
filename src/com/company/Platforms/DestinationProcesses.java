@@ -3,6 +3,7 @@ package com.company.Platforms;
 import com.company.Destinations.Stations;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 
 /**
@@ -10,18 +11,16 @@ import java.util.HashMap;
  */
 public class DestinationProcesses {
 
-    public HashMap<String, String> destinations = new HashMap<String, String>();
+    public HashMap<String, String> destinations = new LinkedHashMap<>();
 
     public HashMap<String, String> collectDestinationForPlatform()
     {
-        for(Stations eastbound: Stations.values())
+        for(Stations stations: Stations.values())
         {
-            destinations.put(eastbound.getStationName(), eastbound.getStationCode());
+            destinations.put(stations.getStationName(), stations.getStationCode());
         }
 
         return destinations;
     }
-
-
 
 }

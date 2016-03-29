@@ -1,7 +1,5 @@
 package com.company.PlatformScreens;
 
-import com.company.PlatformScreens.ScreenManager;
-
 /**
  * Created by stevenstretton on 23/03/2016.
  */
@@ -12,13 +10,14 @@ public class StationScreen extends ScreenManager{
     public void primaryDestination()
     {
         screenManager.CollectPrimaryDestination();
-        System.out.println("...");
+        System.out.println(CollectPrimaryDestination().toString());
     }
 
     public void callingRoutes()
     {
+        System.out.println("Calling at...");
         screenManager.CollectCallingPoints();
-        System.out.println("...");
+        System.out.println(CollectCallingPoints().toString());
     }
 
 }
