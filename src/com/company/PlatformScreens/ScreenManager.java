@@ -52,7 +52,9 @@ public class ScreenManager{
         ArrayList callingPointsToDisplay = new ArrayList();
         for(int index = 1; index < destinationToDisplay.size(); ++index)
         {
-            callingPointsToDisplay.add(index - 1, destinationToDisplay.get(index));
+            String temporaryUnsortedDestination = destinationToDisplay.get(index);
+            String temporarySortedDestination = temporaryUnsortedDestination.substring(0,temporaryUnsortedDestination.indexOf("="));
+            callingPointsToDisplay.add(index - 1,temporarySortedDestination);
         }
 
         return callingPointsToDisplay;

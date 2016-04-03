@@ -11,14 +11,13 @@ public class StationScreen extends ScreenManager{
     {
         screenManager.CollectPrimaryDestination();
         System.out.println(CollectPrimaryDestination().toString());
-        System.out.println("...");
     }
 
     public void callingRoutes()
     {
+        System.out.println("Calling at...");
         screenManager.CollectCallingPoints();
         System.out.println(CollectCallingPoints().toString());
-        System.out.println("...");
     }
 
 }
