@@ -1,46 +1,42 @@
 package com.company.Destinations;
 
-import java.util.ArrayList;
-
 /**
  * Created by stevenstretton on 27/02/2016.
  */
-public class Stations {
+public enum Stations
+{
+    //Constants (which are also objects)
+    SHEFFIELD("Sheffield", "SHF"),
+    DARNAL("Darnal", "DAN"),
+    KIVERTON_BRIDGE("Kiverton Bridge", "KIV"),
+    KIVERTON_PARK("Kiverton Park", "KVP"),
+    SHIREOAKS("Shireoaks", "SRO"),
+    WORKSOP("Worksop", "WRK"),
+    RETFORD("Retford", "RET"),
+    GAINSBROUGH_LEA_ROAD("Gainsbrough Lea Road", "GBL"),
+    SAXILBY("Saxilby", "SAX"),
+    LINCOLN_CENTRAL("Lincoln Central", "LIN");
 
-    public void stations() {
+    //Variables to support the two arguments (in the Constants above)
+    private final String stationName;
+    private final String stationCode;
 
-
-    }
-
-    public class getListOfStations() //Stores all the stations
+    //Constructor
+    Stations(String stnName, String stnCode)
     {
-        ArrayList<String> stationNames = new ArrayList<String>();
-
-        stationNames.add("Sheffield");
-        stationNames.add("Darnall");
-        stationNames.add("Kiverton Bridge");
-        stationNames.add("Kiverton Park");
-        stationNames.add("Shireoaks");
-        stationNames.add("Worksop");
-        stationNames.add("Retford Low Level");
-        stationNames.add("Gainsbrough LR");
-        stationNames.add("Saxilby");
-        stationNames.add("Lincoln Central");
-
+        stationName = stnName;
+        stationCode = stnCode;
     }
 
-    public class addSpaceToListOfStations(ArrayList<String> stationList) //Adds space and comma to station list.
+    //Returns the station name
+    public String getStationName()
     {
-        String COMMA_SPACE = ", ";
-        int arrayListKey;
-        for(int i = 0; i < stationList.size(); i++)
-        {
-            arrayListKey = stationList.get(i);
-            stationList.set(i, stationList + COMMA_SPACE);
-
-        }
-
+        return stationName;
     }
 
-
+    //Returns the station code
+    public String getStationCode()
+    {
+        return stationCode;
+    }
 }
