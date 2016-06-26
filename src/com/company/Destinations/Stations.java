@@ -8,6 +8,7 @@ public enum Stations
     //Constants (which are also objects)
     SHEFFIELD("Sheffield", "SHF"),
     DARNAL("Darnal", "DAN"),
+    WOODHOUSE("Woodhouse", "WDH"),
     KIVERTON_BRIDGE("Kiverton Bridge", "KIV"),
     KIVERTON_PARK("Kiverton Park", "KVP"),
     SHIREOAKS("Shireoaks", "SRO"),

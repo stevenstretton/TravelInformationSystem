@@ -1,8 +1,5 @@
 package com.company.PlatformScreens;
 
-import com.company.Platforms.DestinationProcesses;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,19 +32,20 @@ public class ScreenManager{
 
     public String CollectPrimaryDestination()
     {
-        String destinationsToScreen[] = new String[destinationToDisplay.size()];
+        String destinationProcess[] = new String[destinationToDisplay.size()];
         int destinationCount = 0;
 
-        for(int i = 0; i < destinationToDisplay.size(); i++)
+        for(int index = 0; index < destinationToDisplay.size(); ++index)
         {
-            destinationsToScreen[i] = destinationToDisplay.get(i);
-            destinationsToScreen[i].split("[=]");
+            destinationProcess[index] = destinationToDisplay.get(index);
+            String destinationToScreen = destinationProcess[index].substring(0, destinationProcess[index].indexOf("="));
+            destinationProcess[index] = destinationToScreen;
             destinationCount++;
         }
 
         destinationCount--;
 
-        return destinationsToScreen[destinationCount];
+        return destinationProcess[destinationCount];
     }
 
     public ArrayList CollectCallingPoints()

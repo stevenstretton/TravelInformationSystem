@@ -3,8 +3,6 @@ package com.company;
 import com.company.PlatformScreens.ScreenManager;
 import com.company.Platforms.DestinationProcesses;
 
-import java.util.ArrayList;
-
 public class Main extends DestinationProcesses{
 
 
